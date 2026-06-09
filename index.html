@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>QR-One Argosari</title>
+  <meta name="description" content="Portal informasi digital QR-One Argosari." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Beranda QR-One Argosari">
+      <img id="navLogo" src="assets/logo-desa.svg" alt="Logo" />
+      <span id="navTitle">QR-One Argosari</span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Buka menu" aria-expanded="false">☰</button>
+
+    <nav class="nav" id="navMenu" aria-label="Navigasi utama">
+      <a href="#home">Home</a>
+      <a href="#peta">Peta</a>
+      <a href="#daftar">Daftar</a>
+      <a href="#tentang">Tentang</a>
+      <a class="nav-cta" href="#jelajahi">Jelajahi</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="place-pill" id="heroPlace">Desa Argosari</p>
+          <h1 id="heroTitle">QR-One Argosari</h1>
+          <p class="hero-kicker" id="heroKicker">Satu QR untuk semua informasi desa</p>
+          <p class="hero-desc" id="heroDescription">Akses peta desa, UMKM, wisata, fasilitas umum, jalur evakuasi, dan pembaruan data dalam satu halaman.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#peta" id="primaryCta">Jelajahi Peta</a>
+            <a class="btn secondary" href="#daftar" id="secondaryCta">Lihat Daftar</a>
+          </div>
+        </div>
+
+        <div class="hero-card" aria-label="Logo dan informasi program">
+          <img id="mainLogo" class="main-logo" src="assets/logo-desa.svg" alt="Logo QR-One" />
+          <div class="logo-row">
+            <img id="kknLogo" src="assets/logo-kkn.svg" alt="Logo KKN" />
+            <img id="campusLogo" src="assets/logo-kampus.svg" alt="Logo Kampus" />
+          </div>
+          <p id="heroNote">Satu akses untuk informasi desa, wisata, dan mitigasi.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro-section" id="tentang">
+      <div class="container intro-grid">
+        <article class="intro-copy">
+          <h2 id="aboutTitle">Argosari, Desa yang Tumbuh Bersama Potensi Lokal</h2>
+          <p id="aboutText">QR-One dibuat agar informasi desa lebih mudah ditemukan oleh warga, pengunjung, perangkat desa, dan pelaku usaha lokal.</p>
+          <span class="hashtag" id="hashtag">#SatuQRUntukDesa</span>
+        </article>
+        <div class="gallery" aria-label="Galeri ilustrasi desa">
+          <img src="assets/gallery-1.svg" alt="Ilustrasi pemandangan desa" />
+          <img src="assets/gallery-2.svg" alt="Ilustrasi fasilitas desa" />
+          <img src="assets/gallery-3.svg" alt="Ilustrasi informasi desa" />
+        </div>
+      </div>
+    </section>
+
+    <section class="quick-section" id="jelajahi">
+      <div class="container">
+        <div class="section-heading center">
+          <p>Menu Cepat</p>
+          <h2>Pilih informasi yang dibutuhkan</h2>
+        </div>
+        <div class="quick-links" id="quickLinks"></div>
+      </div>
+    </section>
+
+    <section class="map-section" id="peta">
+      <div class="container">
+        <div class="section-heading">
+          <p>Peta Interaktif</p>
+          <h2 id="mapTitle">Peta Informasi QR-One</h2>
+          <span id="mapDescription">Klik item legenda untuk membuka tautan lokasi atau informasi terkait.</span>
+        </div>
+
+        <div class="map-layout">
+          <aside class="legend-card">
+            <h3>Legenda</h3>
+            <p>Klik item untuk membuka lokasi/informasi.</p>
+            <div id="legendList" class="legend-list"></div>
+          </aside>
+          <div class="map-card">
+            <iframe id="mapFrame" title="Peta QR-One Argosari" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="map-empty" id="mapEmpty">
+              <strong>Peta belum diisi</strong>
+              <span>Masukkan link embed Google Maps di data.js.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="list-section" id="daftar">
+      <div class="container">
+        <div class="section-heading">
+          <p>Daftar Informasi</p>
+          <h2 id="listTitle">Informasi QR-One Argosari</h2>
+          <span id="listDescription">Pilih kartu untuk membuka peta, form, nomor, atau informasi lainnya.</span>
+        </div>
+        <div class="cards-grid" id="cardsGrid"></div>
+
+        <div class="form-cta">
+          <div>
+            <p>Pembaruan Data</p>
+            <h3 id="formTitle">Daftarkan UMKM, wisata, fasilitas umum, atau informasi lain</h3>
+            <span id="formDescription">Gunakan satu Google Form. Di dalam form, pendaftar memilih keperluannya.</span>
+          </div>
+          <a class="btn primary" id="formButton" href="#" target="_blank" rel="noopener">Buka Form Pendaftaran</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img id="footerLogo" src="assets/logo-desa.svg" alt="Logo QR-One" />
+        <div>
+          <strong id="footerTitle">QR-One Argosari</strong>
+          <p id="footerText">Portal informasi desa berbasis QR.</p>
+        </div>
+      </div>
+      <div class="footer-social" id="footerLinks"></div>
+    </div>
+    <p class="copyright" id="copyright">© QR-One Argosari</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
