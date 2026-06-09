@@ -3,20 +3,30 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>QR-One Argosari</title>
   <meta name="description" content="Portal akses cepat informasi Desa Argosari berbasis QR Code." />
+  <meta name="theme-color" content="#174c2f" />
+
+  <!-- Font utama QR-One: Inter. Ini menyesuaikan dengan style.css QR-One yang sudah dibuat. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <a class="skip-link" href="#menu-utama">Lewati ke menu utama</a>
 
   <header class="site-header">
     <nav class="topbar" aria-label="Navigasi utama">
-      <a class="brand" href="#beranda" aria-label="QR-One Argosari">
-        <span class="brand-mark" id="navLogoText">Q1</span>
+      <a class="brand" href="#home" aria-label="Kembali ke beranda QR-One Argosari">
+        <span class="brand-mark" id="navLogoText" aria-hidden="true">Q1</span>
         <span id="navTitle">QR-One Argosari</span>
       </a>
-      <div class="nav-actions">
+
+      <div class="nav-actions" aria-label="Menu cepat">
         <a href="#menu-utama">Menu</a>
         <a href="#peta">Peta</a>
         <a href="#update">Update</a>
@@ -24,21 +34,26 @@
     </nav>
   </header>
 
-  <main id="beranda">
-    <section class="hero section-pad">
+  <main id="home">
+    <section class="hero section-pad" aria-labelledby="siteTitle">
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="eyebrow" id="eyebrow">PORTAL INFORMASI DESA</p>
-          <h1 id="siteTitle">QR-One Argosari</h1>
-          <p class="hero-subtitle" id="siteSubtitle">Satu QR untuk akses informasi Desa Argosari.</p>
 
-          <div class="partner-row" aria-label="Logo pendukung">
+          <h1 id="siteTitle">QR-One Argosari</h1>
+
+          <p class="hero-subtitle" id="siteSubtitle">
+            Satu QR untuk akses informasi Desa Argosari.
+          </p>
+
+          <div class="partner-row" aria-label="Logo dan identitas pendukung">
             <div class="partner-card" id="kknBadge">
-              <span class="partner-logo">KKN</span>
+              <span class="partner-logo" aria-hidden="true">KKN</span>
               <span>KKN</span>
             </div>
+
             <div class="partner-card" id="campusBadge">
-              <span class="partner-logo">🏛️</span>
+              <span class="partner-logo" aria-hidden="true">🏛️</span>
               <span>Kampus</span>
             </div>
           </div>
@@ -49,105 +64,141 @@
           </div>
         </div>
 
-        <div class="hero-card" aria-label="Ringkasan fungsi QR-One">
-          <div class="hero-card-icon">📍</div>
+        <aside class="hero-card" aria-label="Ringkasan fungsi QR-One">
+          <div class="hero-card-icon" aria-hidden="true">📍</div>
+
           <h2>Satu pintu informasi</h2>
-          <p id="siteIntro">Dibuat untuk memudahkan warga dan pengunjung mengakses informasi penting Desa Argosari.</p>
-          <div class="mini-stats">
+
+          <p id="siteIntro">
+            Dibuat untuk memudahkan warga dan pengunjung mengakses informasi penting Desa Argosari.
+          </p>
+
+          <div class="mini-stats" aria-label="Kategori utama">
             <span>Desa</span>
             <span>Wisata</span>
             <span>Darurat</span>
           </div>
-        </div>
+        </aside>
       </div>
     </section>
 
-    <section class="container notice" id="noticeText">
+    <section class="container notice" id="noticeText" aria-label="Catatan penggunaan">
       Pilih menu utama di bawah ini. Setiap tombol dibuat singkat agar mudah dipakai dari HP saat scan QR.
     </section>
 
     <section class="container search-section" aria-label="Pencarian cepat">
       <label for="searchInput">Cari cepat</label>
+
       <div class="search-box">
         <span aria-hidden="true">🔎</span>
-        <input id="searchInput" type="search" placeholder="Cari peta, wisata, fasilitas, darurat..." autocomplete="off" />
+        <input
+          id="searchInput"
+          type="search"
+          placeholder="Cari peta, wisata, fasilitas, darurat..."
+          autocomplete="off"
+        />
       </div>
     </section>
 
-    <section class="container main-menu" id="menu-utama">
+    <section class="container main-menu" id="menu-utama" aria-labelledby="menuTitle">
       <div class="section-head">
         <p class="eyebrow">AKSES CEPAT</p>
-        <h2>Menu utama QR-One</h2>
-        <p>Menu dibuat ringkas agar warga, wisatawan, dan perangkat desa bisa langsung menemukan informasi yang dibutuhkan.</p>
+
+        <h2 id="menuTitle">Menu utama QR-One</h2>
+
+        <p>
+          Menu dibuat ringkas agar warga, wisatawan, dan perangkat desa bisa langsung menemukan informasi yang dibutuhkan.
+        </p>
       </div>
 
       <div id="menuGrid" class="menu-grid" aria-live="polite"></div>
-      <p id="emptyState" class="empty-state" hidden>Tidak ada menu yang cocok dengan pencarian.</p>
+
+      <p id="emptyState" class="empty-state" hidden>
+        Tidak ada menu yang cocok dengan pencarian.
+      </p>
     </section>
 
-    <section class="container map-section" id="peta">
+    <section class="container map-section" id="peta" aria-labelledby="mapTitle">
       <div class="map-copy">
         <p class="eyebrow">PETA</p>
-        <h2>Peta Desa & lokasi penting</h2>
-        <p>Area ini disiapkan untuk peta interaktif atau Google My Maps. Link dan aktivasi peta bisa ditambahkan setelah data lokasi siap.</p>
+
+        <h2 id="mapTitle">Peta Desa & lokasi penting</h2>
+
+        <p>
+          Area ini disiapkan untuk peta interaktif atau Google My Maps. Link dan aktivasi peta bisa ditambahkan setelah data lokasi siap.
+        </p>
       </div>
-      <div class="map-placeholder">
+
+      <div class="map-placeholder" role="img" aria-label="Placeholder peta QR-One Argosari">
         <div>
-          <span class="map-icon">🗺️</span>
+          <span class="map-icon" aria-hidden="true">🗺️</span>
+
           <h3>Peta belum diaktifkan</h3>
-          <p>Nanti bagian ini bisa menampilkan peta desa, titik wisata, fasilitas umum, titik kumpul, dan jalur evakuasi.</p>
+
+          <p>
+            Nanti bagian ini bisa menampilkan peta desa, titik wisata, fasilitas umum, titik kumpul, dan jalur evakuasi.
+          </p>
         </div>
       </div>
     </section>
 
-    <section class="container info-section" id="informasi">
+    <section class="container info-section" id="informasi" aria-labelledby="infoTitle">
       <div class="section-head compact">
         <p class="eyebrow">INFORMASI</p>
-        <h2>Informasi prioritas</h2>
+
+        <h2 id="infoTitle">Informasi prioritas</h2>
       </div>
+
       <div id="priorityList" class="priority-list"></div>
     </section>
 
-    <section class="container update-section" id="update">
+    <section class="container update-section" id="update" aria-labelledby="formTitle">
       <div>
         <p class="eyebrow">PEMBARUAN DATA</p>
+
         <h2 id="formTitle">Kirim data atau koreksi informasi</h2>
-        <p id="formDescription">Gunakan satu form untuk mengirim data baru, koreksi informasi desa, UMKM, wisata, fasilitas umum, atau laporan pembaruan.</p>
+
+        <p id="formDescription">
+          Gunakan satu form untuk mengirim data baru, koreksi informasi desa, UMKM, wisata, fasilitas umum, atau laporan pembaruan.
+        </p>
       </div>
-      <a id="formButton" class="form-button" href="#" aria-disabled="true">Form belum aktif</a>
+
+      <a id="formButton" class="form-button" href="#" aria-disabled="true">
+        Form belum aktif
+      </a>
     </section>
   </main>
 
-<footer class="qr-footer">
-  <div class="qr-footer-inner">
-    <div class="qr-footer-logos">
-      <div class="qr-footer-logo">Q1</div>
-      <div class="qr-footer-logo">KKN</div>
+  <footer class="qr-footer">
+    <div class="qr-footer-inner">
+      <div class="qr-footer-logos" aria-label="Logo QR-One dan KKN">
+        <div class="qr-footer-logo">Q1</div>
+        <div class="qr-footer-logo">KKN</div>
+      </div>
+
+      <p class="qr-footer-description">
+        QR-One Argosari dibuat untuk memudahkan masyarakat dan pengunjung mengakses
+        informasi desa, lokasi penting, wisata, fasilitas umum, dan informasi darurat
+        secara cepat melalui satu QR Code.
+      </p>
+
+      <div class="qr-footer-socials" aria-label="Kontak dan media sosial">
+        <a href="#" aria-label="Instagram QR-One">◎</a>
+        <a href="#" aria-label="TikTok QR-One">♫</a>
+        <a href="#" aria-label="Email QR-One">✉</a>
+      </div>
+
+      <div class="qr-footer-line"></div>
+
+      <p id="footerText" class="qr-footer-copy">
+        © KKN Desa Argosari 2026
+      </p>
+
+      <p id="lastUpdated" class="qr-footer-update">
+        Terakhir diperbarui: Mei 2026
+      </p>
     </div>
-
-    <p class="qr-footer-description">
-      QR-One Argosari dibuat untuk memudahkan masyarakat dan pengunjung
-      mengakses informasi desa, lokasi penting, wisata, fasilitas umum,
-      dan informasi darurat secara cepat melalui satu QR Code.
-    </p>
-
-    <div class="qr-footer-socials">
-      <a href="#" aria-label="Instagram">◎</a>
-      <a href="#" aria-label="TikTok">♫</a>
-      <a href="#" aria-label="Email">✉</a>
-    </div>
-
-    <div class="qr-footer-line"></div>
-
-    <p id="footerText" class="qr-footer-copy">
-      © KKN Desa Argosari 2026
-    </p>
-
-    <p id="lastUpdated" class="qr-footer-update">
-      Terakhir diperbarui: Mei 2026
-    </p>
-  </div>
-</footer>
+  </footer>
 
   <script src="data.js"></script>
   <script src="script.js"></script>
