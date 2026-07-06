@@ -1,59 +1,33 @@
-# QR-One Argosari - Layout WebGIS/UMKM
+# QR-ONE ARGOSARI - Website WebGIS Wisata
 
-Template ini dibuat untuk GitHub Pages. Layout terinspirasi dari gaya portal WebGIS: navbar, hero besar, section tentang, menu cepat, peta, daftar informasi, form pendaftaran, dan footer.
+Website statis untuk GitHub Pages yang disusun berdasarkan konten Guidebook Desa Argosari dan dikembangkan menjadi portal wisata digital berbasis peta interaktif.
 
-## File penting
+## Isi website
 
-- `index.html` = struktur halaman
-- `style.css` = tampilan/layout
-- `script.js` = logika sederhana untuk menampilkan data
-- `data.js` = isi website yang paling sering diedit
-- `assets/` = logo dan ilustrasi
+- Beranda QR-ONE ARGOSARI
+- Tentang Desa Argosari
+- Daftar daya tarik wisata
+- Peta WebGIS berbasis Leaflet/OpenStreetMap
+- Halaman detail tiap wisata melalui `detail.html?id=...`
+- Budaya dan kearifan lokal Tengger
+- Panduan wisatawan
+- Tautan cepat pengganti Linktree
+- Checklist data tambahan yang bisa diinput setelah survei
 
-## Cara upload ke GitHub
+## Cara upload ke GitHub Pages
 
 1. Ekstrak ZIP ini.
-2. Upload isi folder ke repository GitHub kamu.
-3. Commit changes.
-4. Aktifkan GitHub Pages dari Settings > Pages.
-5. Pilih `Deploy from a branch`, branch `main`, folder `/root`.
+2. Upload semua file ke repository GitHub Pages yang sudah digunakan QR Code.
+3. Jangan mengganti nama repository jika QR Code sudah mengarah ke URL lama.
+4. Commit changes.
+5. Tunggu GitHub Pages memperbarui website beberapa menit.
 
-## Cara edit isi
+## File yang paling sering diedit
 
-Edit file `data.js`.
+- `data.js` untuk mengubah data wisata, koordinat, kontak, harga, fasilitas, dan link.
+- `assets/` untuk mengganti foto dengan foto asli hasil survei.
+- `style.css` untuk mengubah warna, ukuran, dan tampilan.
 
-Yang sering diganti:
+## Catatan penting
 
-- Judul website: `CONFIG.site.title`
-- Nama desa: `CONFIG.site.place`
-- Link Google Form: `CONFIG.form.url`
-- Link Google Maps: bagian `MENU_ITEMS`
-- Logo: bagian `CONFIG.assets`
-
-## Cara ganti logo
-
-1. Upload logo baru ke folder `assets`.
-2. Pakai nama file tanpa spasi, contoh `logo-kkn.png`.
-3. Ubah `data.js`, misalnya:
-
-```js
-kknLogo: "assets/logo-kkn.png"
-```
-
-## Cara pasang Google Maps embed
-
-1. Buka Google Maps.
-2. Klik Share / Bagikan.
-3. Pilih Embed a map / Sematkan peta.
-4. Copy nilai `src` dari iframe.
-5. Paste ke:
-
-```js
-CONFIG.map.embedUrl
-```
-
-Contoh:
-
-```js
-embedUrl: "https://www.google.com/maps/embed?pb=..."
-```
+Beberapa koordinat masih contoh/awal dan harus diverifikasi di lapangan. Ganti nomor WhatsApp pada `SITE_CONFIG.whatsapp` di file `data.js` dengan nomor admin asli.
