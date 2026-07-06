@@ -53,7 +53,7 @@ const DESTINATIONS = [
     title: "Puncak B29 / Negeri di Atas Awan",
     category: "alam",
     badge: "Sunrise & Sunset",
-    image: "assets/img-b29.webp",
+    image: "assets/P1",
     sourcePage: "Guidebook halaman 4",
     lat: -7.9592318,
     lng: 112.9948334,
