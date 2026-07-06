@@ -53,7 +53,7 @@ const DESTINATIONS = [
     title: "Puncak B29 / Negeri di Atas Awan",
     category: "alam",
     badge: "Sunrise & Sunset",
-    image: "assets/P1",
+    image: "assets/P1.png",
     sourcePage: "Guidebook halaman 4",
     lat: -7.9592318,
     lng: 112.9948334,
@@ -263,7 +263,7 @@ const GUIDE_TIPS = [
 ];
 
 const GALLERY = [
-  { title: "Panorama Argosari", image: "assets/img-cover.webp" },
+  { title: "Panorama Argosari", image: "assets/P1.png" },
   { title: "Pertanian Lereng", image: "assets/img-pertanian.webp" },
   { title: "Puncak B29", image: "assets/img-b29.webp" },
   { title: "Gunung Semeru", image: "assets/img-semeru.webp" },
