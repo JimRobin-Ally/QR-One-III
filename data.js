@@ -131,7 +131,7 @@ const DESTINATIONS = [
     title: "View Point dan Pembudidayaan Edelweiss",
     category: "edukasi",
     badge: "Konservasi",
-    image: "assets/img-edelweiss.webp",
+    image: "assets/Edelweis.jpeg",
     sourcePage: "Guidebook halaman 7",
     lat: -7.9622,
     lng: 112.9929,
@@ -268,7 +268,7 @@ const GALLERY = [
   { title: "Puncak B29", image: "assets/img-b29.webp" },
   { title: "Gunung Semeru", image: "assets/img-semeru.webp" },
   { title: "Kearifan Lokal", image: "assets/img-kearifan.webp" },
-  { title: "Edelweiss", image: "assets/img-edelweiss.webp" },
+  { title: "Edelweiss", image: "assets/Edelweis.jpeg" },
   { title: "Sanggar Agung", image: "assets/img-sanggar.webp" }
 ];
 
