@@ -27,6 +27,26 @@ const CATEGORIES = [
   { id: "fasilitas", label: "Fasilitas", icon: "🧭" }
 ];
 
+
+
+// Untuk memetakan DAERAH/AREA, isi AREAS dengan koordinat polygon hasil survei.
+// Biarkan kosong jika belum ada koordinat batas area yang valid.
+// Format koordinat Leaflet: [latitude, longitude].
+// Contoh penggunaan:
+// {
+//   id: "area-pertanian",
+//   title: "Kawasan Pertanian Argosari",
+//   category: "edukasi",
+//   summary: "Area perkiraan kawasan pertanian yang dapat dikembangkan sebagai wisata edukasi.",
+//   coords: [
+//     [-7.9710, 112.9890],
+//     [-7.9700, 112.9940],
+//     [-7.9748, 112.9950],
+//     [-7.9752, 112.9900]
+//   ]
+// }
+const AREAS = [];
+
 const DESTINATIONS = [
   {
     id: "puncak-b29",

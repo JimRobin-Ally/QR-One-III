@@ -139,8 +139,21 @@ button, input { font: inherit; }
 .map-sidebar label { display: block; margin: 20px 0 8px; font-weight: 900; }
 .search-box { display: flex; align-items: center; gap: 8px; padding: 12px 14px; border-radius: 16px; background: #f4faf7; border: 1px solid var(--line); margin-bottom: 12px; }
 .search-box input { width: 100%; border: 0; outline: 0; background: transparent; color: var(--text); }
-.map-wrap { position: relative; border-radius: var(--radius); overflow: hidden; min-height: 620px; box-shadow: var(--shadow); border: 1px solid rgba(255,255,255,.8); }
-.map { width: 100%; height: 100%; min-height: 620px; z-index: 1; }
+.map-wrap {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: clamp(360px, 42vw, 500px);
+  min-height: 0;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255,255,255,.8);
+}
+.map {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  z-index: 1;
+}
 .custom-marker { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50% 50% 50% 8px; transform: rotate(-45deg); background: var(--primary); color: #fff; box-shadow: 0 12px 24px rgba(15,118,110,.32); border: 3px solid #fff; }
 .custom-marker span { transform: rotate(45deg); font-size: 18px; }
 .leaflet-popup-content { font-family: var(--font-main); min-width: 220px; }
@@ -240,7 +253,8 @@ button, input { font: inherit; }
   .card-grid, .culture-grid, .tips-grid, .link-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .map-shell { grid-template-columns: 1fr; }
   .map-sidebar { order: 2; }
-  .map-wrap, .map { min-height: 470px; }
+  .map-wrap { height: 420px; }
+  .map { height: 100%; }
   .detail-sidebar { position: static; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
@@ -260,6 +274,7 @@ button, input { font: inherit; }
   .section { padding: 62px 0; }
   .section-head.compact { display: block; }
   .card-grid, .culture-grid, .tips-grid, .link-grid, .footer-grid { grid-template-columns: 1fr; }
+  .map-wrap { height: 340px; }
   .detail-list { grid-template-columns: 1fr; }
   .info-row { grid-template-columns: 1fr; }
   .detail-main { padding: 24px; }

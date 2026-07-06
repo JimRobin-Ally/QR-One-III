@@ -1,6 +1,7 @@
 let activeCategory = "semua";
 let map;
 let markerLayer;
+let areaLayer;
 
 const $ = (selector, scope = document) => scope.querySelector(selector);
 const $$ = (selector, scope = document) => Array.from(scope.querySelectorAll(selector));
@@ -229,11 +230,37 @@ function createMarkerIcon(item) {
   });
 }
 
+function renderMapAreas() {
+  if (!map || !areaLayer || typeof AREAS === "undefined" || !Array.isArray(AREAS)) return [];
+  areaLayer.clearLayers();
+  const areaBounds = [];
+  const areas = AREAS.filter((area) => activeCategory === "semua" || area.category === activeCategory);
+
+  areas.forEach((area) => {
+    if (!Array.isArray(area.coords) || area.coords.length < 3) return;
+    const polygon = L.polygon(area.coords, {
+      color: "#0f766e",
+      weight: 2,
+      opacity: .85,
+      fillColor: "#0f766e",
+      fillOpacity: .13
+    });
+    polygon.bindPopup(`
+      <div class="popup-title">${escapeHTML(area.title)}</div>
+      <p class="popup-text">${escapeHTML(area.summary || "Area penting Desa Argosari")}</p>
+    `);
+    polygon.addTo(areaLayer);
+    area.coords.forEach((coord) => areaBounds.push(coord));
+  });
+
+  return areaBounds;
+}
+
 function renderMapMarkers() {
   if (!map || !markerLayer) return;
   markerLayer.clearLayers();
   const items = getFilteredDestinations();
-  const bounds = [];
+  const bounds = renderMapAreas();
 
   items.forEach((item) => {
     if (typeof item.lat !== "number" || typeof item.lng !== "number") return;
@@ -267,6 +294,7 @@ function initMap() {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
   }).addTo(map);
 
+  areaLayer = L.layerGroup().addTo(map);
   markerLayer = L.layerGroup().addTo(map);
   renderMapMarkers();
 

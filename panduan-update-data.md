@@ -97,3 +97,69 @@ Data yang sebaiknya dikumpulkan:
 6. Tunggu GitHub Pages update beberapa menit.
 
 Selama nama repository dan URL utama tidak berubah, QR Code lama tetap bisa dipakai.
+
+
+## Mengatur ukuran peta agar tidak terlalu memanjang
+
+Ukuran peta diatur dari file `style.css` pada bagian `.map-wrap`. Versi ini sudah dibuat lebih ringkas dengan bentuk persegi panjang responsif:
+
+```css
+.map-wrap {
+  height: clamp(360px, 42vw, 500px);
+}
+```
+
+Jika ingin lebih pendek, ganti menjadi `height: 360px;`. Jika ingin lebih tinggi, ganti menjadi `height: 480px;`.
+
+## Memetakan titik penting di Leaflet
+
+Titik wisata, homestay, area parkir, ojek, warung, dan fasilitas umum diambil dari array `DESTINATIONS` pada file `data.js`. Minimal isi kolom berikut:
+
+```js
+{
+  id: "parkir-b29",
+  title: "Area Parkir B29",
+  category: "fasilitas",
+  badge: "Parkir",
+  image: "assets/img-cover.webp",
+  lat: -7.959200,
+  lng: 112.994800,
+  verified: true,
+  summary: "Area parkir kendaraan sebelum menuju Puncak B29.",
+  description: "Tuliskan informasi lengkap area parkir di sini.",
+  highlights: ["Dekat akses B29", "Perlu konfirmasi tarif"],
+  activities: ["Parkir kendaraan", "Transit menuju titik wisata"],
+  facilities: ["Parkir", "Warung - jika ada", "Toilet - jika ada"],
+  tips: ["Konfirmasi tarif terbaru", "Ikuti arahan petugas lokal"],
+  info: {
+    "Jam buka": "Perlu input",
+    "Tarif": "Perlu input",
+    "Kontak": "Perlu input"
+  }
+}
+```
+
+Setelah data baru ditambahkan, marker akan otomatis muncul di peta dan kartu wisata/fasilitas akan muncul di halaman utama.
+
+## Memetakan daerah/area dengan polygon
+
+Daerah seperti kawasan pertanian, area edelweiss, atau batas zona wisata dapat diisi pada array `AREAS` di `data.js`. Gunakan beberapa titik koordinat yang membentuk area tertutup.
+
+```js
+const AREAS = [
+  {
+    id: "area-pertanian",
+    title: "Kawasan Pertanian Argosari",
+    category: "edukasi",
+    summary: "Area kawasan pertanian yang menjadi daya tarik edukasi.",
+    coords: [
+      [-7.9710, 112.9890],
+      [-7.9700, 112.9940],
+      [-7.9748, 112.9950],
+      [-7.9752, 112.9900]
+    ]
+  }
+];
+```
+
+Gunakan polygon hanya setelah koordinat area sudah diverifikasi agar tidak menyesatkan wisatawan.
